@@ -1,0 +1,54 @@
+Program Name: Assignment 1.5(Calculator)
+
+Purpose: 
+    This program will serve as a basic calculator that will handle simple calculations 
+based on the values that the user inputs.
+
+Inputs: 
+    The user will be prompted to input the first value, followed by the operation they wish to perform,
+ then they are asked the second value to perform the operation. Once the calculation is done, the
+program will ask the user if they wish to perform another calculation which the user will respond with
+Y for yes or N for no.
+
+Output: The main ouput for this program is the result of the calculation made by the program.
+
+Variables:
+ -first_number float Stores the first value entered by user.
+ -second_number float Stores the second value enteredby the user.
+ -calculation_result float Stores the result from the calculation that was performed with the two
+values inputted by the user.
+ -math_symbol char Stores the math operator that will be used in the calculation.
+ -repeat_calculation char Stores the decision the user makes which determines whether they want
+to make another calculation or not.
+
+Key Design Choices:
+ -I opted to use 3 while loops because it allowed the user to reenter their value if their initial value was
+ not a valid one instead of just terminating the program enitrely.
+ - I used a switch statment because I think it is faster than a bunch of if else statements and 
+ there is also a limited number of potential operators the user can choose. so I felt it make more sense.
+
+ Functions:
+ main(): Holds the enitre calculator program.
+
+ Sample Input/Output:
+ 
+  Input:
+ first_number:20
+ math_symbol:+
+ second_number:40
+  Output:
+ calculation_result:60
+
+
+Test Cases:
+Normal integers:
+first_number: 10
+second_number: 5
+math_symbol: +
+output: 15
+
+Negative numbers:
+first_number: -5
+second_number: -3
+math_symbol:*
+Output:15

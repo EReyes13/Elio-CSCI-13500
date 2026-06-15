@@ -1,0 +1,67 @@
+Program Name: GPACalc.cpp
+
+Purpose: 
+This program serves as a GPA calculator that calculates the GPA based on the credits and Letter Grade the user inputs.
+
+Inputs: 
+   -Credits
+   -Letter Grade
+   -Whether they want to continue(Yes or No)
+
+Output: The main ouput for this program is the GPA based on the calculations.
+
+Variables:
+ int entered_credits - Stores the amount of credits the user inputs.
+ int total_credits - Stores the total sum of all credits inputted by the user.
+ int amount_of_classes_taken - Keeps track of how many classes and grades the user has inputted
+ string Letter_Grade - The Letter Grade the user inputted
+ float total_credit_points - Value used in the calculation of the GPA. Determined by the Letter Grade inputted by user.
+ int grade_point_average_rounded - stores the rounded GPA after the initial calculations
+ float grade_point_average - Stores the final GPA that will be displayed to the user. Determined by a series of calculations
+ Array Grades - Holds a list of all acceptable Letter Grades
+ int switch_condition - A value that helps match the Letter Grade to its appropriate Credit Points.
+ string user_decision - Decides whether to continue the program or to exit it.
+
+Key Design Choices:
+ -I used an array and a switch statement rather than a bunch of if elses because I find that to be more efficient 
+ and makes it easier to add new grades as well
+ -I used 4 while loops mostly as input verification
+ - i used a for loop to help match the letter grade to a value which was then used to assign a specific case in the switch statement.
+ This allowed me to find a way to convert a string to a float value that can be used in the calculation of the GPA.
+Program Steps:
+ -First, it gives the general idea of the program and simple instructions.
+ -Then, it asks for the amount of credits for the class, which is stored in a variable after being input verified.
+ -After, it asks for a Letter Grade, once the user inputs a grade, it checks the array to see if the input matches one of the possible grades in the array.
+ If it does, then a value is assigned to a variable which used in a switch statement. If the input doesn't match, it will ask the user to try again.
+ -It increases the amount of classes by 1.
+ -After, it goes to a switch statement where the amount of credits is multiplied by a value based on the Letter Grade the user input.
+ This result is then stored in a variable that holds that result and all previous results.
+ -Then, it does all the necessary calculations and rounds it to the nearest hundreth.
+ -It displays the final GPA and asks the user if they want to enter another class. If they say Yes, then the loop will begin all over.
+ If they say no, then the loop would break, ending the program with a farewell message. 
+ Functions:
+ main(): Holds the enitre GPA calculator program.
+
+ Sample Input/Output:
+ 
+ Input:
+ Credits = 3
+ Grade = A
+ No
+
+ Output:
+ GPA = 4.0
+ Would you like to add another class?
+ Goodbye.
+
+
+Test Cases:
+2 classes:
+-1st class: 3 credits with an F
+GPA = 0
+-2nd class with 6 credits and an A
+GPA = 2.67
+
+1 class:
+3 credits with an FIN
+GPA = 0;

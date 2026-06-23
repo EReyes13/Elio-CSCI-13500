@@ -12,6 +12,7 @@ void removeCopies(std::vector<int>& data){
     // Modify the vector named "data" directly.
     //
     // Maybe two-pointer method? Hmm?
+    // Hint: resize() function
 
 }
 

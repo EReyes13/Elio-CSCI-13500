@@ -255,7 +255,7 @@ int main(){
 
     std::cout << "row: " << size_row_one<< " col: " << size_col_one<< std::endl << std::endl;
 
-   Print2DArray(testing_matrix_one, size_row_one);
+    Print2DArray(testing_matrix_one, size_row_one);
     MatrixAddition(testing_matrix_one,size_row_one,testing_matrix_two,size_row_two);
     TransposeMatrix(testing_matrix_one,size_row_one);
     Determinant(testing_matrix_one, size_row_one);

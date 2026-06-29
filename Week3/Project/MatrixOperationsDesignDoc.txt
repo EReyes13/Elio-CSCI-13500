@@ -1,0 +1,124 @@
+
+## Program Name
+
+matrixmain.cpp
+
+## Purpose
+
+This program takes two matrices and performs specific operations using the initial matrices. 
+It outputs either a matrix or a value depending on the operation. 
+---
+
+## Inputs
+
+List all inputs the program will receive.
+
+Example:
+
+-Matrices
+-Size of matrices.
+-target value.
+---
+
+## Outputs
+
+List what the program will display or produce.
+
+Example:
+
+- Matrices
+- Determinant
+---
+
+## Variables
+
+- testing_matrix int[][] Provided test values to be used in the functions.
+- size_row int Size of an array.
+- count_x/count_y int used as coordinates in the matrix.
+- resulting_matrix int[][] holds the value that will be used as a paremater in the print function.
+- value_a/b/c  int used as values in an equation to find the Determinant.
+- determinant int was the resulting determinant after the calculations
+- postion_x/y int used as coordinates of target value in a matrix.
+
+---
+
+## Key Design Choices
+
+Explain any important decisions you made when designing the program.
+
+Examples:
+
+- I used if else for the printing function since there were little conditions that can be fulfilled.
+- i made specific value in the resulting matrix equal to the addition of two matrix values instead of adding a intermediate value since it was easier.
+- I used the equations outright instead of using a for loop since I felt it would be easier than figuring out an equation for the determinant values.
+There probably exists a for loop for it but since it is only 3X3 or 2X2, it is simpler like this for me.
+- I used a bool to determine if the target was found since it makes the check easier and accounts for both possibilities instead of doing break mid loop.
+- I used a placeholder sum for the multiplication function since ther was multple values that needed to be added to find the value of the resulting matrix.    
+---
+
+## Program Steps (Algorithm)
+
+- Prints the first testing matrix
+- goes through each coordinate of the resulting matrix and both input matrices and makes the corresponding value in the resulting matrix
+equal to the sum of the values of both matrices on that coordinate.
+- Prints the resulting matrix to terminal.
+- Takes the input matrix, then makes the resulting matrix at a specific coordinate equal to the value of the matrix in the inverse coordinate.
+- Prints the resulting matrix.
+- Take the input matrix, and initialize three values labeled a,b, and c.
+- Make each value equal to their corresponding equation using values in the matrix.
+- make one final calculation to determine the determinant.
+- output the value to the terminal.
+- Search the matrix and checking each time if the value in that specific coordinate in the matrix equals the target value. 
+If it does, make the x and y position equal to the cooridnates of the matrix in which the value was found.
+- Output the coordinates if the target was found, or output a message saying it was not found if no values matched the target.
+-  Check if both matrix dimensions are valid .
+- Take both matrices, and use three different for loops to carry out an equation to multiply all values in the matrices.
+(Hard to explain without a visual representation of my thought process).
+- print the resulting matrix.
+
+---
+
+## Functions
+
+Print2DArray() - Print the 2D array using the input matrix given
+MatrixAddition() - Adds the values fo two matrices and outputs the values into a seperate matrix.
+TransposeMatrix() - Switches the values on the rows and columns.
+Determinant() - Uses the inputted matrix and a given equation to find the determinant in that matrix.
+SearchValue() - Searches the matrix to see if the target value is in the matrix provided.
+MatrixMultiplication() - performs an equation to multiply two matrices. 
+---
+
+## Sample Input/Output
+
+Input:
+Matrix one [][3] = {{1,2,3},{4,5,6,},{7,8,9}}
+Matrix two [][3] = {{12,65,82},{83,2,8},{10,96,67}}
+Output:
+[1|2|3]
+[4|5|6]
+[7|8|9]
+
+[13|67|85]
+[87|7|14]
+[17|104|76]
+
+[1|2|3]
+[4|5|6]
+[7|8|9]
+0
+found 5 at [1][1]
+[208|357|299]
+[523|846|770]
+[838|1335|1241]
+
+---
+
+
+
+
+
+
+
+
+
+

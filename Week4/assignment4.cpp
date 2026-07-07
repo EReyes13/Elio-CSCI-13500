@@ -16,11 +16,9 @@ void removeCopies(std::vector<int>& data)
     // Hint: resize() function
     int current_number = 0;
     int placeholder = 0;
-    int left_point = 0;
     int new_num = 0;
     for(int count = 0; count < data.size();count++)
     {
-        left_point++;
         if(data[count] <= current_number)
         {
             while(data[placeholder] == current_number && placeholder < data.size() - 1)
@@ -97,4 +95,5 @@ int main(){
 /*Part 2: The time complexity of the first function is O(n) since it goes through the array once.
 (I do not know exactly what the time complexity of a while loop is).
 The time complexity of the second function is O(n*m) since it goes through two different strings once
-(it could be O(2n) if both strings were of equal length)*/
+(it could be O(2n) if both strings were of equal length)
+*/

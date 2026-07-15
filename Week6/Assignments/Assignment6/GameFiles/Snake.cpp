@@ -12,6 +12,7 @@ Snake::Snake() {
     length_ = 0;
     id_ = 0;
     // TODO: allocate STARTING_LENGTH nodes and link them together
+    Regenerate(STARTING_LENGTH);
 }
 
 // TODO: Destructor
@@ -19,6 +20,13 @@ Snake::Snake() {
 // - If you don't do this, running under valgrind/ASan will report a leak.
 Snake::~Snake() {
     // TODO
+    Node* node_target;
+    while(head_)
+    {
+        node_target = head_;
+        head_ = head_->next_;
+        delete node_target;
+    }
 }
 
 // TODO: kill()
@@ -29,7 +37,21 @@ Snake::~Snake() {
 // - Return the number of segments ACTUALLY killed.
 int Snake::Kill(int count) {
     // TODO
-    return 0;
+    if(count >= length_)
+    {
+        Snake::~Snake();
+        int length = length_;
+        length_ = 0;
+        return length;
+    }
+    for(int i = 0;i < count;i++)
+    {
+        Node* delete_target = head_;
+        head_ = head_->next_;
+        delete delete_target;
+        length_--;
+    }
+    return count;
 }
 
 // TODO: regenerate()
@@ -39,6 +61,30 @@ int Snake::Kill(int count) {
 // - Update `tail` (and `head` if the snake was empty!) and `length`.
 void Snake::Regenerate(int count) {
     // TODO
+    if(head_ == nullptr)
+    {
+        head_ = new Node;
+        head_->body_part_ = id_;
+        id_++;
+        length_++;
+    }
+    for(int i =0; i< count;i++)
+    {   
+        if(tail_ == nullptr)
+        {
+            tail_ = new Node;
+            tail_->body_part_ =id_;
+            head_->next_ = tail_; 
+            id_++;
+            length_++;
+        }
+        tail_->next_ = new Node;
+        tail_->body_part_=id_;
+        tail_ = tail_->next_;
+        id_++;
+        length_++;
+
+    }
 }
 
 // TODO: print()
@@ -48,9 +94,16 @@ void Snake::Regenerate(int count) {
 // - This function must not modify the snake - use a `const Node*` to walk it.
 void Snake::PrintSnake() const {
     // TODO
+    Node* current_node = head_;
+    while(current_node)
+    {
+        std::cout << "[" << current_node->body_part_ << "]";
+        current_node = current_node->next_;
+    }
 }
 
 int Snake::GetLength() const {
     // TODO
-    return 0;
+    int length = length_;
+    return length;
 }

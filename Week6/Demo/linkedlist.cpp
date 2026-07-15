@@ -30,7 +30,7 @@ int main(){
     }
 
     current_node = &head; 
-    while (current_node){
+    while (current_node!= nullptr){
         std::cout << current_node->name << " -> ";
         
         

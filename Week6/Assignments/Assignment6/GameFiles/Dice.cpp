@@ -1,6 +1,7 @@
 #include "Dice.h"
 #include <cstdlib>
 #include <ctime>
+#include<random>
  
 // TODO: Implement rollDice().
 // - Should return a random integer between 1 and 6, inclusive.
@@ -9,5 +10,6 @@
  
 int RollDice() {
     // TODO: replace this placeholder
-    return 0;
+    int roll_result = std::rand()% 7;
+    return roll_result;
 }

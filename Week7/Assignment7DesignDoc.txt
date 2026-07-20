@@ -1,0 +1,93 @@
+# Assignment 7 Design Document
+
+## Program Name
+
+Assignment7.cpp
+## Purpose
+
+Briefly explain what the program does and what problem it solves.
+
+Assignment7 takes an inputted text file and a word to look for, as well as a word to replace it with, and goes through the text file
+replaceing the target word with the word the user wishes to add. 
+---
+
+## Inputs
+
+List all inputs the program will receive.
+
+string file_input takes the text file to be read.
+string word_to_be_replaced the word that will be being replaced in the text
+string new_word the new word that will replace the target word.
+string output_file the name of the output text.
+---
+
+## Outputs
+
+the amount of times the target word has been replaced.
+the name of the text file.
+the text file.
+---
+
+## Variables
+
+int count tracks  how many times a word has been replaced
+string file_name  in charge of the text file the user inputs
+string word_to_replace holds the word the user wants replaced
+string new_word holds the new word the user wants to add
+string output_file  holds the name of the text file that will be outputted to the user.
+string current_word hold the current word in the text file
+string current_line holds the current line in the text file. 
+---
+
+## Key Design Choices
+
+Explain any important decisions you made when designing the program.
+
+I made a loop that goes through every character in the text file and adds it to a word string that will complete if the current character is a space or new line.
+After that, it makes the corresponding checks based on the word made.
+---
+
+## Program Steps (Algorithm)
+Ask the user for the input file, and check if it opens
+Ask the user what word they want replaced, and with what word.
+Ask the user the name of the output file, and create it.
+go through every line in the text file, and check eahc character in the line.
+adds each character into the current_word variable, and if the current character is a space or a new line, it completes the word
+Check if the word made matches the word the user wants replaced. If so, it replaces it with the new word and prints that to the text
+If the word did not match the target word, it will print to the text like normal.
+Output how many times the word was replaced, and where the text file was stored.
+Close both input and output files. 
+
+---
+
+## Functions
+
+main()
+holds all the logic behind the word searching and replacing    
+---
+
+## Sample Input/Output
+
+Input:
+CatStory.txt
+Mittens
+Son
+NewStory.txt
+
+Output
+The word Mittens was Replaced 3 times
+Text has been outputted to NewStory.txt.
+---
+
+## Testing
+
+### Test Case 1
+Input:
+CatStory.exe
+MittensSon
+NewStory.txt
+
+
+Output:
+The word Mittens was Replaced 3 times
+Text has been outputted to NewStory.txt.
